@@ -1,0 +1,39 @@
+@import "tailwindcss";
+
+@layer utilities {
+  .font-display {
+    font-family: 'Unbounded', sans-serif;
+  }
+}
+
+/* Geometric Ornament Patterns & Custom Rhombus Helpers */
+.bg-ornament-pattern {
+  background-image: radial-gradient(circle at 50% 50%, rgba(220, 38, 38, 0.08) 0%, transparent 60%),
+    url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cpath d='M30 0L60 30L30 60L0 30z' fill='%23DC2626' fill-opacity='0.04'/%3E%3Cpath d='M30 10L50 30L30 50L10 30z' fill='%23111827' fill-opacity='0.03'/%3E%3Cpath d='M30 20L40 30L30 40L20 30z' fill='%2316A34A' fill-opacity='0.05'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+.bg-ornament-bold {
+  background-image: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none'%3E%3Cpath d='M40 0 L80 40 L40 80 L0 40 Z' fill='%23dc2626' fill-opacity='0.08'/%3E%3Cpath d='M40 15 L65 40 L40 65 L15 40 Z' stroke='%2316a34a' stroke-width='2' stroke-opacity='0.15' fill='none'/%3E%3Cpath d='M40 30 L50 40 L40 50 L30 40 Z' fill='%230f172a' fill-opacity='0.1'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+.rhombus-cut {
+  clip-path: polygon(16px 0%, calc(100% - 16px) 0%, 100% 16px, 100% calc(100% - 16px), calc(100% - 16px) 100%, 16px 100%, 0% calc(100% - 16px), 0% 16px);
+}
+
+.rhombus-beveled {
+  clip-path: polygon(0 12px, 12px 0, 100% 0, 100% calc(100% - 12px), calc(100% - 12px) 100%, 0 100%);
+}
+
+.diamond-badge {
+  clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+}
+
+@keyframes pulseGlow {
+  0%, 100% { opacity: 0.4; transform: scale(1); }
+  50% { opacity: 0.8; transform: scale(1.05); }
+}
+
+.animate-pulse-glow {
+  animation: pulseGlow 4s infinite ease-in-out;
+}
+
